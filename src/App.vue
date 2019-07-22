@@ -1,35 +1,60 @@
 <template>
-    <div id="main">
-        <HeaderBlock/>
-        <ContentBlock/>
-        <FooterBlock/>
+    <div id="app">
+        <div class="nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <router-link class="nav-link" to="/">HOME</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link class="nav-link" to="/blog">BLOG</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link class="nav-link" to="/services">SERVICES</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link class="nav-link" to="/contact">CONTATS</router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+            <transition name="moveInUp">
+                <router-view/>
+            </transition>
+
+
     </div>
 </template>
-
 <script>
-    import HeaderBlock from './components/HeaderBlock.vue'
-    import ContentBlock from './components/ContentBlock.vue'
-    import FooterBlock from './components/FooterBlock.vue'
-
     export default {
-        name: 'app',
-        components: {
-            HeaderBlock,
-            ContentBlock,
-            FooterBlock
-        }
+        name: 'App'
     }
 </script>
-
 <style>
-    @import './assets/styles/framework.css';
+    @import "assets/styles/framework.css";
 
-    * {
-        box-sizing: border-box;
-        font-family: Roboto,sans-serif;
-        margin: 0;
-        padding: 0;
+    .moveInUp-enter-active {
+        animation: fadeIn 1s ease-in;
     }
 
-
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 </style>

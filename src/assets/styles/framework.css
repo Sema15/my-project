@@ -27,3 +27,8 @@ a:hover{
     background-color: #ffffff;
     border-radius: 4px;
 }
+p {
+    font: 400 18px Roboto, sans-serif;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 0.87);
+}
