@@ -1,14 +1,16 @@
 <template>
     <div class="blog">
-        <h1>{{blog}}</h1>
+        <div class="container">
+            <h1>{{title}}</h1>
+        </div>
     </div>
 </template>
 <script>
-    export default{
-        name:'blog',
-        data (){
-            return{
-                title:'Blog'
+    export default {
+        name: 'blog',
+        data() {
+            return {
+                title: 'Blog'
             }
         }
     }
