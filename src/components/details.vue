@@ -3,27 +3,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>{{product.productTitle}}</h1>
-                    <img :src="product.image" class="img-fluid" alt="">
-                    <p style="padding-top: 30px">{{product.desc}}</p>
+                    <h1>{{product[proId].productTitle}}</h1>
+                    <img :src="product[proId].image" alt="">
+                    <p style="padding-top: 30px">{{product[proId].desc}}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-    import {PRODUCTS} from "../assets/data/productList";
+    import json from "../assets/data/productList.json";
 
     export default {
         name: 'details',
         data() {
             return {
                 proId: this.$route.params.Pid,
-                product: {}
+                product: json.products
             }
         },
-        mounted() {
-            this.product = PRODUCTS[this.proId - 1] || {};
-        }
+
     }
 </script>
