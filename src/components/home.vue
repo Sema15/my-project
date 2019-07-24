@@ -3,7 +3,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-6" v-for="(data,index) in products" :key="index">
-<!--                    <img :src="data.image" class="img-fluid" alt="">-->
                     <img :src="data.image" alt="">
                     <h3 @click="goTodetail(data.productId)">{{data.productTitle}}</h3>
                 </div>
